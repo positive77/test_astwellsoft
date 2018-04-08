@@ -17,9 +17,7 @@ class m180407_104707_create_shop_workday_table extends Migration
             'id' => $this->primaryKey(),
 			'shop_id'=>$this->integer(),
 			'date_start' => $this->dateTime(),
-			'date_end' => $this->dateTime(),
-			'date_start_timestamp' => $this->timestamp(),
-			'date_end_timestamp' => $this->timestamp(),
+			'date_end' => $this->dateTime(),			
         ]);
 		
 		$this->addForeignKey(
@@ -38,9 +36,7 @@ class m180407_104707_create_shop_workday_table extends Migration
                 $this->insert('shop_workday', [				
 					'shop_id' => $shop->id,
 					'date_start' => date('Y:m:d 08:00:00',$date),
-					'date_end' => date('Y:m:d 19:00:00',$date),
-                    'date_start_timestamp' => date('Y:m:d 08:00:00',$date),
-					'date_end_timestamp' => date('Y:m:d 19:00:00',$date),					
+					'date_end' => date('Y:m:d 19:00:00',$date),                    					
 				]);				
 			}
 		}
