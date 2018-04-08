@@ -1,0 +1,8 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . index.php
+
+RewriteCond %{REQUEST_URI} ^/index.php [OR]
+RewriteCond %{REQUEST_URI} ^/site/index
+RewriteRule ^(index.php|site/index)/(.*) / [R=301,L]
